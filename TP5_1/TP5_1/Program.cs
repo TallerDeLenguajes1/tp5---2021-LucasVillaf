@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace TP5_1
 {
@@ -13,6 +14,8 @@ namespace TP5_1
             //ApartadoTres();
 
             //ApartadoCuatro();
+
+            ApartadoCinco();
 
 
 
@@ -258,11 +261,51 @@ namespace TP5_1
                 Console.WriteLine(resultado);
             }
             Console.ReadKey();
+        }
 
+        private static void ApartadoCinco()
+        {
+            Console.WriteLine("------------ EJERCICIO NUMERO 5 ------------\n");
+            Console.WriteLine("Ingrese una direccion web");
+            string url = Console.ReadLine();
+            //string regex = @"\A[w]{3}(\.)[a-z0-9]+(\.)[com|org|net|com.ar|info]\Z";
+            ValidarURL(url);
 
+            Console.WriteLine("Ingrese su mail");
+            string mail = Console.ReadLine();
+            ValidarMail(mail);            
+        }
 
+        private static void ValidarURL(string url)
+        {
+            string regex = @"(https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,})";
 
+            bool resultIsMatch = Regex.IsMatch(url, regex);
 
+            if (resultIsMatch)
+            {
+                Console.WriteLine("La cadena ingresada es una dirección web valida");
+            }
+            else
+            {
+                Console.WriteLine("La cadena ingresada no es una dirección web valida");
+            }
+        }
+
+        private static void ValidarMail(string mail)
+        {
+            string regex = @"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$";            
+
+            bool resultIsMatch = Regex.IsMatch(mail, regex);
+
+            if (resultIsMatch)
+            {
+                Console.WriteLine("La cadena ingresada es un mail valido");
+            }
+            else
+            {
+                Console.WriteLine("La cadena ingresada no es un mail valido");
+            }
         }
 
        
