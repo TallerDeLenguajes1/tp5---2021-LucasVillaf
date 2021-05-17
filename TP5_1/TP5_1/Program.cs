@@ -49,6 +49,7 @@ namespace TP5_1
             InvertirNum(&numeroIngresado);
             Console.WriteLine("El numero ingresado invertido es " + numeroIngresado);
             Console.WriteLine("\n--------------------------------------------\n");
+
         }
 
         private static void ApartadoDos ()
@@ -132,6 +133,7 @@ namespace TP5_1
 
         private static void ApartadoCuatro()
         {
+            Console.WriteLine("------------ EJERCICIO NUMERO 4 ------------\n");
             Console.WriteLine("Ingrese una cadena de caracteres");
             string cadena = Console.ReadLine();
 
@@ -172,8 +174,8 @@ namespace TP5_1
             Console.WriteLine("\n--------- BUSCAR PALABRA EN UNA FRASE ---------\n");
             Console.WriteLine("Ingrese la palabra que desea buscar");
             string search = Console.ReadLine();
-            bool busqueda = frase2.Contains(search);
-            if(busqueda)
+            bool resultadoBusqueda = frase2.Contains(search);
+            if(resultadoBusqueda)
             {
                 Console.WriteLine("Se encontró la palabra buscada");
             }
